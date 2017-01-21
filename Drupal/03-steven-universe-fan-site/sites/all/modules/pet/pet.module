@@ -1,0 +1,31 @@
+<?php
+
+function pet_menu() {
+    $items['pet'] = array(
+        'title' => 'Lion',
+        'page callback' => 'pet_display',
+        'access callback' => TRUE,
+        'type' => MENU_NORMAL_ITEM,
+    );
+    return $items;
+}
+
+function pet_display() {
+    return "
+        <div class='pet'>
+            <h3>Lion Facts:</h3>
+            <ul>
+                <li>Favorite Snack: Lion Lickers</li>
+                <li>Hobbies: napping, boxes, and transdimensional warping</li>
+                <li>Birthday: Unknown</li>
+                <li>Origin: Unknown</li>
+                <li>Basically a ton of unknowns</li>
+                <li>Is pink, so maybe something to do with Rose Quartz?</li>
+            </ul>
+            <p>
+                <a href='http://steven-universe.wikia.com/wiki/Lion'>More Info</a>
+            </p>
+            <img class='pet-image' src='/sites/all/modules/pet/Lion.png'>
+        </div>
+    ";
+}

@@ -1,0 +1,16 @@
+<?php
+
+function cards_menu() {
+    $items['cards/%'] = array(
+        'title' => 'Welcome!',
+        'page callback' => 'card_display',
+        'page arguments' => array(1),
+        'access callback' => TRUE,
+        'type' => MENU_CALLBACK,
+    );
+    return $items;
+}
+
+function card_display($name) {
+    return 'Hello ' . $name ;
+}

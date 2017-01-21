@@ -1,0 +1,12 @@
+.pet-image {
+    width: 400px;
+}
+
+.pet {
+    font-size: 16px;
+    min-height: 800px;
+}
+
+.pet ul {
+    margin-bottom: 20px;
+}

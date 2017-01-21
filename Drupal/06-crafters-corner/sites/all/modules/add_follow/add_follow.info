@@ -1,0 +1,6 @@
+name = Add Follow
+description = Adds additonal social sites like raverly and pintrest to the follow module
+core = 7.x
+package = Epicodus Examples
+files[] = add_follow.module
+

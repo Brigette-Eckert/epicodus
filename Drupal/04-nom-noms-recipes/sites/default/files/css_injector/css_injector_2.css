@@ -1,0 +1,9 @@
+.infographic-teasers h2.node-title, 
+.polls-block h2.node-title {
+    font-size: 120%;
+    
+}
+
+.infographic-teasers p {
+    font-size: 90%;
+}

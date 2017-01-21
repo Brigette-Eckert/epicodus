@@ -1,0 +1,5 @@
+name = Simplified Contact
+description = Hides the subject line and send yourself a copy checkbox from user on contact form.  Sets defaults for title to be feedback, and check box to be checked
+core = 7.x
+package = Epicodus Examples
+files[] = simple_contact.module

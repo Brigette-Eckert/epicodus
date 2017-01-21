@@ -1,0 +1,35 @@
+diff --git a/html.tpl.php b/html.tpl.php
+index a7656f5..fda8881 100644
+--- a/html.tpl.php
++++ b/html.tpl.php
+@@ -14,7 +14,7 @@
+ <?php print $scripts ?>
+ <script type="text/javascript"><?php /* Needed to avoid Flash of Unstyle Content in IE */ ?> </script>
+ </head>
+-<body class="<?php print  $classes; ; print ' mainbody'; print get_sidebar_state($page['sidebar_first'], $page['sidebar_last'], $page['right_dark']); ?>">
++<body class="<?php print  $classes; ?>">
+   <?php print $page_top; ?>
+   <?php print $page; ?>
+   <?php print $page_bottom; ?>
+diff --git a/template.php b/template.php
+index 3f82364..2fafb36 100644
+--- a/template.php
++++ b/template.php
+@@ -117,4 +117,15 @@ function admire_grunge_form($variables) {
+   // Anonymous DIV to satisfy XHTML compliance.
+   return '<form' . drupal_attributes($element['#attributes']) . '><div>' . $element['#children'] . '</div></form>';
+ 	}
+-}
+\ No newline at end of file
++}
++
++
++// Append mainbody and sidebar state classes to classes_array
++function admire_grunge_preprocess_html(&$variables) {
++  $page = $variables['page'];
++  $sidebar_first = (isset($page['sidebar_first']))? $page['sidebar_first'] : NULL;
++  $sidebar_last = (isset($page['sidebar_last']))? $page['sidebar_last'] : NULL;
++  $right_dark = (isset($page['right_dark']))? $page['right_dark'] : NULL;
++  $variables['classes_array'][] = 'mainbody';
++  $variables['classes_array'][] = trim(get_sidebar_state($sidebar_first, $sidebar_last, $right_dark));  
++}

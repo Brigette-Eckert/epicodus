@@ -1,0 +1,105 @@
+<?php
+
+function rock_paper_scissors_menu(){
+$items['rock_paper_scissors_player1'] = array(
+    'title' => 'Rock, Paper, Scissors',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('player1_form'),
+    'access callback' => TRUE,
+    'type' => MENU_NORMAL_ITEM,
+);
+
+$items['rock_paper_scissors_player2'] = array(
+    'title' => "Rock Paper Scissors",
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('player2_form'),
+    'access callback' => TRUE,
+    'type' => MENU_CALLBACK,
+    );
+
+$items['rock_paper_scissors_game_over'] = array(
+    'title' => 'Game Results',
+    'page callback' => 'game_results',
+    'access callback' => TRUE,
+    'type' => MENU_CALLBACK,
+    );
+    return $items;
+}
+
+
+
+function player1_form(){
+$form['player_one'] = array(
+'#title' => 'Player 1 Selection',
+'#type' => 'textfield',
+'#description' => 'Player 1. Please enter Rock, Paper or Scissors',
+'#element_validate' => array('validate_entry'),
+'#required' => TRUE,
+);
+
+$form['submit'] =array(
+    '#type' => 'submit',
+    '#value' => 'Pass to Player 2',
+    );
+
+    return $form;
+}
+
+
+function player2_form(){
+$form['player_two'] = array(
+    '#title' => 'Player 2 Selection',
+    '#type' => 'textfield',
+    '#description' => 'Player 2, Please enter Rock, Paper or Scissors',
+    '#element_validate' => array('validate_entry'),
+    '#required' => TRUE,
+);
+
+$form['submit'] = array(
+    '#type' => 'submit',
+    '#value' => 'Submit',
+    );
+
+return $form;
+}
+
+function validate_entry($element){
+    $choices = array('rock', 'paper', 'scissors');
+
+    if(in_array(strtolower($element['#value']), $choices) == false){
+        form_error($element, t('Please enter Rock, Paper or Scissors'));
+    }
+
+}
+
+function player1_form_submit($form, &$form_state){
+    $_SESSION['p1_choice'] =  $form_state['values']['player_one'];
+    $form_state['redirect'] = 'rock_paper_scissors_player2';
+}
+
+function player2_form_submit($form, &$form_state){
+$p1_choice = $_SESSION['p1_choice'];
+$p2_choice = $form_state['values']['player_two'];
+    if($p1_choice == $p2_choice) {
+        $result = 'Both players picked ' . $p1_choice . " So it's a Tie!";
+    }elseif($p1_choice == 'rock' && $p2_choice == 'scissors'){
+        $result = 'Rock smashes scissors. Player 1 wins!';
+    }elseif($p1_choice == 'rock' && $p2_choice == 'paper'){
+        $result = 'Paper covers rock. Player 2 wins!';
+    }elseif($p1_choice == 'paper' && $p2_choice == 'scissors'){
+        $result = 'Scissors cut paper. Player 2 wins!';
+    } elseif($p1_choice == 'paper' && $p2_choice == "rock"){
+        $result = 'Paper covers rock. Player 1 wins!';
+    } elseif($p1_choice == 'scissors' && $p2_choice == 'rock'){
+        $result = 'Rock smashes scissors. Player 2 wins!';
+    } elseif($p1_choice == 'scissors' && $p2_choice == 'paper'){
+        $result = 'Scissors cut paper. Player 1 wins!';
+    }
+    $_SESSION['result'] = $result;
+    $form_state['redirect'] = 'rock_paper_scissors_game_over';
+}
+
+
+function game_results(){
+    return '<p>' . $_SESSION['result'] . '</p> <div class="module-su-img"> <img src="/sites/all/modules/rock_paper_scissors/Greg_Young.png" title= "Did someone say Rock?!? Greg is already ready to rock" alt="Young Greg Universe"></div>';
+}

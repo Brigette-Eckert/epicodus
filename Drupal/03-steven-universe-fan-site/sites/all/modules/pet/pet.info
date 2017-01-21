@@ -1,0 +1,6 @@
+name = Pet
+description = Display info about a pet
+package = Epicodus Examples
+core = 7.x
+files[] = pet.module
+stylesheets[all][] = pet.css

@@ -1,0 +1,147 @@
+<?php
+
+function queen_attack_menu(){
+    $items['queen_attack']=array(
+        'title' => "Queen Attack",
+        'page callback' => 'drupal_get_form',
+        'page arguments' => array('queen_attack_form'),
+        'access callback' => TRUE,
+        'type' => MENU_NORMAL_ITEM,
+    );
+    $items['attack_calculated']=array(
+        'title' => "Attack Results!",
+        'page callback' => 'attack_results',
+        'access callback' => TRUE,
+        'type' => MENU_CALLBACK,
+    );
+    return $items;
+}
+
+//chess board 8x8 so coordinates 1-8 for each side
+function queen_attack_form(){
+    $form['queen_coordinates_x'] = array(
+        '#title' => 'Queen Horizontal Coordinate',
+        '#type' => 'select',
+        "#options" => array(
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+        ),
+        '#description' => t('Enter your starting horizontal coordinate for your Queen'),
+    );
+    $form['queen_coordinates_y'] = array(
+        '#title' => 'Queen Vertical Coordinate',
+        '#type' => 'select',
+        '#options' => array(
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8
+        ),
+        '#description' => t('Enter your starting vertical coordinate for your Queen'),
+    );
+    $form['target__coordinates_x'] = array(
+        '#title' => 'Target Horizontal Coordinate',
+        '#type' => "select",
+        '#options' => array(
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8
+        ),
+        '#description' => t('Enter the horizontal coordinate for the target piece'),
+        '#element_validate' => array('not_same_start'),
+
+    );
+    $form['target__coordinates_y']= array(
+        '#title' => 'Target Vertical Coordinate',
+        '#type' => "select",
+        '#options' => array(
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8
+        ),
+        '#description' => t('Enter the vertical coordinate for the target piece'),
+        '#element_validate' => array('not_same_start'),
+    );
+
+    $form['submit'] = array(
+        '#type' => 'submit',
+        '#value' => "Queen, Attack!",
+    );
+
+    return $form;
+}
+
+
+//testing that starting location isn't the same
+function not_same_start($form, &$form_state){
+    $queen_x = $form_state['values']['queen_coordinates_x'];
+    $queen_y = $form_state['values']['queen_coordinates_y'];
+    $target_x = $form_state['values']['target__coordinates_x'];
+    $target_y = $form_state['values']['target__coordinates_y'];
+
+    $queen_coords =  $queen_x . ' ,' . $queen_y;
+    $target_coords = $target_x . ' ,' . $target_y;
+
+    if($queen_coords == $target_coords){
+        form_error($form, t('Starting Coordinates for Queen and Target Cannot be the Same'));
+    }
+
+
+}
+
+function queen_attack_form_submit($form, &$form_state){
+$queen_x = $form_state['values']['queen_coordinates_x'];
+$queen_y = $form_state['values']['queen_coordinates_y'];
+$target_x = $form_state['values']['target__coordinates_x'];
+$target_y = $form_state['values']['target__coordinates_y'];
+
+//adding one to offset zero index
+$queen_coords = ($queen_x + 1) . ', ' . ($queen_y +1);
+$target_coords = ($target_x + 1) . ', ' . ($target_y +1);
+//diagonal =  queen coords - target coords = +x/+x or -x/-x
+$x_difference = ($queen_x - $target_x);
+$y_difference = ($queen_y - $target_y);
+//compare queen coords and targer coords.
+    //if have same X or Y coordinate (can hit horizontally or vertically)
+    if(($queen_x == $target_x) || ($queen_y == $target_y)) {
+        $result = "Hit";
+    //if can hit diagonally
+    } else if($x_difference == $y_difference){
+        $result = "Hit";
+    }  else {
+        $result = "Missed";
+    }
+
+
+    $_SESSION['queen_coords'] = $queen_coords;
+    $_SESSION['target_coords'] = $target_coords;
+    $_SESSION['result'] = $result;
+    $form_state['redirect'] = 'attack_calculated';
+}
+
+
+function attack_results(){
+        return '<p> Your Attack ' . $_SESSION['result'] . '! </p> </p><p> Queen Coords: ' . $_SESSION['queen_coords'] . '</p> <p> Target Coords: ' . $_SESSION['target_coords'] . '</p> <div class="module-su-img"> <img src="/sites/all/modules/queen_attack/Rose_Quartz_With_Weapon.png" title= "The Queen, Rose Quartz, is read to attack!" alt="Rose Quartz with her Sword and Shield"></div>';
+
+}
+

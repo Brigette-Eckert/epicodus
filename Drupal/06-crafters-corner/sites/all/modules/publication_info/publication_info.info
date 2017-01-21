@@ -1,0 +1,5 @@
+name = Publication Info
+description = A module that changes default date and author publication info box to unchecked when creating new content type
+core = 7.x
+package = Epicodus Examples
+files[] = publication_info.module

@@ -1,0 +1,75 @@
+<?php
+
+function title_case_menu(){
+    $items['title_case']=array(
+        'title' => 'Title Case',
+        'page callback' => 'drupal_get_form',
+        'page arguments' => array('title_case_form'),
+        'access callback' => TRUE,
+        'type' => MENU_NORMAL_ITEM,
+    );
+
+    $items['title_case_success_page'] =array(
+        'title' => "You've Been Cased! Title Cased.",
+        'page callback' => 'title_case_success',
+        'access callback' => TRUE,
+        'type' => MENU_CALLBACK,
+    );
+    return $items;
+}
+
+function title_case_form(){
+    $form['sentence_to_title_case'] =array(
+        '#title' => 'Sentence to Title Case',
+        '#type' => 'textfield',
+        "#filters" => array('lowercase'),
+        '#description' => t('Please enter the sentence you would like to convert to Title Case'),
+    );
+
+    $form['submit'] = array(
+        '#type' => 'submit',
+        '#value' => "Title Case Me!"
+    );
+
+
+    return $form;
+}
+
+function title_case_form_submit($form, &$form_state){
+    $exception_words = array(
+        "a",
+        "an",
+        "the",
+        "but",
+        "or",
+        "on",
+        "in",
+        "with",
+    );
+
+    $user_sentence = $form_state['values']['sentence_to_title_case'];
+    $sentence_output = array();
+    $user_sentence = explode(" ", $user_sentence);
+    foreach($user_sentence as $key => $value){
+        if($value == $user_sentence[0]){
+            array_push($sentence_output, ucwords($user_sentence[$key])." ");
+        } elseif(in_array(($user_sentence[$key]), $exception_words)){
+            array_push($sentence_output, ($user_sentence[$key]). " ");
+        } else {
+            array_push($sentence_output, ucwords($user_sentence[$key]). " ");
+        }
+    }
+
+    $_SESSION['title_cased_sentence'] = $sentence_output;
+    $form_state['redirect'] = 'title_case_success_page';
+}
+
+function title_case_success(){
+    $output =  '<p>';
+    foreach ($_SESSION['title_cased_sentence'] as $value){
+        $output = $output . $value;
+    }
+
+    $output = $output . '</p>';
+    return $output . '<div class="module-su-img"> <img src="/sites/all/modules/title_case/Stevonnie.jpg" title="Stevonnie Approves of Your Title Casing!" alt="Stevonni"> </div>';
+}

@@ -1,0 +1,6 @@
+title = Rock, Paper, Scissors
+description = A module that allows the user to play 'Rock, Paper, Scissors' using a form
+core = 7.x
+package = Epicodus Examples
+dependencies[] = fapi_validation
+files[] = rock_paper_scissors.module

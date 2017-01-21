@@ -1,0 +1,5 @@
+name = Queen Attack
+description = Takes two sets coordinates in from a user.  Determines based on cooridnates if Queen piece in chess could take the other piece.  Based on 8x8 chess board.
+package = Epicodus Examples
+core = 7.x
+files[] = queen_attack.module

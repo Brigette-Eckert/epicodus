@@ -1,0 +1,21 @@
+<?php
+//Set if role is artistian
+function simple_content_form_alter(&$form, &$form_state, $form_id)
+{
+    if ($form_id == 'tutorial_node_form' || $form_id == 'tips_and_tricks_node_form' || $form_id == 'article_node_form') {
+        //set comments to off by default
+        $form['comment_settings']['comment']['#default_value'] = 1;
+
+        //hide menu settings
+        $form['menu']['#type'] = 'hidden';
+        // hide authoring settings
+        $form['author']['#type'] = 'hidden';
+        //hide revision settings
+        $form['revision_information']['#type'] = 'hidden';
+        //hide URL path settings
+        $form['path']['#type'] = 'hidden';
+        //hide publishing options settings
+        $form['options']['#type'] = 'hidden';
+    }
+
+}

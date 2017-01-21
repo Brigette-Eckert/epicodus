@@ -1,0 +1,13 @@
+<?php
+
+function add_follow_follow_networks_alter(&$networks, $uid= 0){
+    $networks[$uid]['raverly'] = array(
+        'title' => t('Raverly'),
+        'domain' => 'ravelry.com',
+    );
+
+    $networks[$uid]['pinterest'] = array(
+      'title' => t('Pinterest'),
+      'domain' => 'pinterest.com'
+    );
+}

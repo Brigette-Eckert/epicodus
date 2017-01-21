@@ -1,0 +1,85 @@
+<?php
+
+function triangle_tracker_menu(){
+    $items['triangle_tracker'] = array(
+        'title' => 'Triangle Tracker',
+        'page callback' => 'drupal_get_form',
+        'page arguments' => array('triangle_form'),
+        'access callback' => TRUE,
+        'type' => MENU_NORMAL_ITEM,
+    );
+    $items['view_triangle'] = array(
+        'title' => 'Your Triangle Analysis',
+        'page callback' => 'calculated_triangle',
+        'access callback' => TRUE,
+        'type' => MENU_CALLBACK,
+    );
+    return $items;
+}
+
+function triangle_form(){
+    $form['side_1'] = array(
+        '#title' => 'Side 1',
+        '#type' => 'textfield',
+        '#description' => 'Enter the length for the first side of your triangle',
+        "#element_validate" => array('element_validate_integer_positive'),
+        '#required' => TRUE,
+    );
+
+    $form['side_2'] = array(
+        '#title' => 'Side 2',
+        '#type' => 'textfield',
+        '#description' => 'Enter the length for the second side of your triangle',
+        '#element_validate' => array('element_validate_integer_positive'),
+        '#required' => TRUE,
+    );
+
+    $form['side_3'] =array(
+        '#title' => 'Side 3',
+        '#type' => 'textfield',
+        "#description" => 'Enter the length for the third side of your triangle',
+        '#element_validate' => array('element_validate_integer_positive'),
+        '#required' => TRUE,
+    );
+
+    $form['submit'] =array(
+        '#type' => 'submit',
+        '#value' => 'Calculate',
+    );
+    return $form;
+
+}
+
+function triangle_form_submit($form, &$form_state){
+    $side_1 = $form_state['values']['side_1'];
+    $side_2 = $form_state['values']['side_2'];
+    $side_3 = $form_state['values']['side_3'];
+    $sides_list = array($side_1, $side_2, $side_3);
+
+    function sort_sides($sides_list){
+        sort($sides_list);
+        return $sides_list;
+    }
+
+    //if all 3 sides are equal
+    if($side_1 == $side_2 && $side_2 == $side_3){
+        $triangle_type = 'Equilateral';
+        // if two shortest sides are less than or equal to longest side
+    } elseif(($sides_list[0] + $sides_list[1]) <= $sides_list[2]){
+        $triangle_type = 'Not a';
+    }else if($side_1 == $side_2 || $side_1 == $side_3 || $side_2 == $side_3){
+        $triangle_type = 'Isosceles';
+    } else {
+        $triangle_type = "Scaling";
+    }
+    $user_triangle = $side_1 . ' x ' . $side_2 . ' x ' . $side_3;
+    $_SESSION['user_triangle'] = $user_triangle;
+    $_SESSION['triangle_type'] = $triangle_type;
+    $form_state['redirect'] = 'view_triangle';
+
+}
+
+function calculated_triangle(){
+    return '<p> Your Triangle with the measurements: ' . $_SESSION['user_triangle'] . ' is a ' . $_SESSION['triangle_type'] . ' Triangle </p> <div class="module-su-img"> <img src="/sites/all/modules/triangle_tracker/peridot-triangle.png" title= "Want to analyize Peridot\'s head, next?" alt="Peridot\'s Triangle Shaped Head"></div>';
+
+}

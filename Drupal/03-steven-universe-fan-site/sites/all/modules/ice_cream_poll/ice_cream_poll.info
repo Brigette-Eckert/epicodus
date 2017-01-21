@@ -1,0 +1,5 @@
+name = Ice Cream Poll by State
+description = A module that asks user to enter their favorite flavor or ice cream and their state.
+core = 7.x
+package = Epicodus Examples
+files[] = ice_cream_poll.moudle

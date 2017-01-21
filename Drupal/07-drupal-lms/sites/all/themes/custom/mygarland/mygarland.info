@@ -1,0 +1,7 @@
+name = My Garland
+description = a subtheme of Garland, made as part of Epicodus self study
+core = 7.x
+base theme = garland
+; stylesheets[all][] = style.css
+stylesheets[all][] = mystyles.css
+scripts[] = js/app.js

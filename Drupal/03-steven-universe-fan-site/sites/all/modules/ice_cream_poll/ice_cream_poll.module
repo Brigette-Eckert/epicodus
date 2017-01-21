@@ -1,0 +1,96 @@
+<?php
+
+function ice_cream_poll_menu(){
+    $items['ice_cream_by_state'] = array(
+        'title' => 'Favorite Ice Cream by State',
+        'page callback' => 'drupal_get_form',
+        'page arguments' => array('ice_cream_form'),
+        'access callback' => TRUE,
+        'type' => MENU_NORMAL_ITEM,
+    ) ;
+    $items['voted'] = array(
+        'title' => "Thanks for Voting!",
+        'page callback' => 'ice_cream_poll_vote_counted',
+        'access callback' => TRUE,
+        'type' => MENU_CALLBACK,
+    );
+
+    return $items;
+}
+
+//use custom validation to check for formatting
+
+//only alpha and spaces on ice cream - regex? or module and regex?
+
+//State: OR, or, Oregon, or variations - check if in array of states
+
+function ice_cream_form(){
+    $form['ice_cream'] = array(
+      '#title' => 'Favorite Ice Cream Flavor',
+      '#description' => 'Please enter your favorite flavor of ice cream',
+      '#type' => 'textfield',
+      '#element_validate' => array('element_validate_spaces_and_alpha'),
+//       '#rules' => array('regexp(/^[a-zA-Z ]*$/)'),
+       '#required' => TRUE,
+    );
+
+    $form['state'] =array(
+      '#title' => 'State',
+      '#description' => 'Please enter the state your currently live in',
+      '#type' => 'textfield',
+       '#element_validate' => array('element_validate_state'),
+       '#required' => TRUE,
+    );
+
+    $form['submit'] =array(
+      '#type' => 'submit',
+      '#value' => 'Vote',
+    );
+    return $form;
+}
+
+function element_validate_state($element){
+$states = array('Alabama', 'alabama', 'AL', 'al', 'Alaska', 'alaska', 'AK', 'ak', 'Arizona', 'arizona', 'AZ', 'az', 'Arkansas', 'arkansas', 'AR', 'ar',
+    'California', 'california', 'CA', 'ca', 'Colorado', 'colorado', 'CO', 'co', 'Connecticut', 'connecticut', 'CT',
+    'Delaware', 'delaware', 'DE', 'de',
+    'Florida', 'florida', 'FL', 'fl',
+    'Georgia', 'georgia', 'GA', 'ga',
+    'Hawaii', 'hawaii', 'HI', 'hi',
+    'Idaho', 'idaho', 'ID', 'id', 'Illinois', 'illinois', 'IL', 'il', 'Indiana', 'indiana', 'IN', 'in', 'Iowa', 'iowa', 'IA', 'ia',
+    'Kansas', 'kansas', 'KS', 'ks', 'Kentucky', 'kentucky', 'KY', 'ky',
+    'Louisiana', 'louisiana', 'LA', 'la',
+    'Maine', 'maine', 'ME', 'me', 'Maryland', 'maryland', 'MD', 'md', 'Massachusetts', 'massachusetts', 'MA', 'ma', 'Michigan', 'michigan', 'MI', 'mi', 'Minnesota', 'minnesota', 'MN', 'mn', 'Mississippi', 'mississippi', 'MS', 'ms', 'Missouri', 'missouri', 'MO', 'mo', 'Montana', 'montana', 'MT', 'mt',
+    'Nebraska', 'nebraska', 'NE', 'ne', 'Nevada', 'nevada', 'NV', 'nv', 'New Hampshire', 'new hampshire', 'NH', 'nh', 'New Jersey', 'new jersey', 'nj', 'NJ', 'New Mexico', 'new mexico', 'NM', 'nm', 'New York', 'new york', 'NY', 'ny', 'North Carolina', 'north carolina', 'NC', 'nc', 'North Dakota', 'north dakota',
+    'Ohio', 'ohio', 'OH', 'oh', 'Oklahoma', 'oklahoma', 'OK', 'ok', 'Oregon', 'oregon', 'OR', 'or',
+    'Pennsylvania', 'pennsylvania', 'PA', 'pa',
+    'Rhode Island', 'rhode island', 'RI', 'ri',
+    'South Carolina', 'south carolina', 'SC', 'sc', 'South Dakota', 'south dakota', 'SD', 'sd',
+    'Tennessee', 'tennessee', 'TN', 'Texas', 'texas', 'TX', 'tx',
+    'Utah', 'utah', 'UT', 'ut',
+    'Vermont', 'vermont', 'VT', 'vt', 'Virginia', 'virginia', 'VA', 'va',
+    'Washington', 'washington', 'WA', 'wa', 'West Virginia', 'west virginia', 'WV', "wv", 'Wisconsin', 'wisconsin', 'WI', 'wi', 'Wyoming', 'wyoming', 'WY', 'wy'
+    );
+
+    if(in_array($element['#value'], $states) == false){
+        form_error($element, t('Please enter a State in the US'));
+    }
+}
+
+
+function element_validate_spaces_and_alpha($element){
+    if(!(preg_match('/^[a-zA-Z ]*$/', $element['#value']))){
+        form_error($element, t('Only use spaces and Alpha characters in the ice cream name'));
+    }
+}
+
+function ice_cream_form_submit($form, &$form_state){
+    $_SESSION['flavor'] = $form_state['values']['ice_cream'];
+    $_SESSION['state'] = $form_state['values']['state'];
+    $form_state['redirect'] = 'voted';
+
+}
+
+
+function ice_cream_poll_vote_counted(){
+    return '<p> We have you down for ' . $_SESSION['flavor'] . ' in the state of ' . $_SESSION['state'] . '</p> <div class="module-su-img"> <img src="/sites/all/modules/ice_cream_poll/Cookie_Cat.png" title= "Cookie Cat is a great ice cream treat" alt="Cookie Cat, ice cream sandwhich"></div>';
+}

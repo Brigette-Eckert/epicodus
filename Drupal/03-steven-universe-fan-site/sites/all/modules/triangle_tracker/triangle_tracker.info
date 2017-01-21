@@ -1,0 +1,5 @@
+name = Triangle Tracker
+description = Module that takes 3 numbers from user, makes a triangle and tells the user what kind of triangle it is based on data
+core = 7.x
+package = Epicodus Examples
+files[] = triangle_tracker.module

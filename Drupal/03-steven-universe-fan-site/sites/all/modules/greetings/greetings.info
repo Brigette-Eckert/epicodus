@@ -1,0 +1,5 @@
+name = greetings
+description = Generates greetings for registered users on login and on logout
+package = Epicodus Examples
+core = 7.x
+files[] = greetings.module

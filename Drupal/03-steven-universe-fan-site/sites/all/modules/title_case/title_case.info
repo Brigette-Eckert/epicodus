@@ -1,0 +1,6 @@
+name = Title Case
+description = Convert user sumbitted text into title case.
+package = Epicodus Examples
+core = 7.x
+dependencies[] = fapi_validation
+files[] = title_case.module

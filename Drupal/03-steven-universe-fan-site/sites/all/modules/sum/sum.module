@@ -1,0 +1,60 @@
+<?php
+
+function sum_menu(){
+    $items['sum'] =array(
+      'title' => "Sum Two Numbers",
+      'page callback' => "drupal_get_form",
+      'page arguments' => array('sum_form'),
+      'access callback' => TRUE,
+      'type' => MENU_NORMAL_ITEM,
+    );
+    $items['sum_success'] = array(
+        'title' => 'Success',
+        'page callback' => 'sum_success',
+        'access callback' => True,
+        'type' => MENU_CALLBACK,
+    );
+    return $items;
+}
+
+function sum_form(){
+      $form['left_number'] = array(
+          "#title" => "Left Number",
+          "#type" => 'textfield',
+          "#description" => t('Pick a number, any number, between -9,999 & 9,999.'),
+          '#element_validate' => array('element_validate_number', 'element_validate_range'),
+          '#required' => TRUE,
+      );
+
+      $form['right_number'] =array(
+          "#title" => "Right Number",
+          "#type" => "textfield",
+          "#description" => t('Enter another number, between -9,999 & 9,999, to add to the first one!'),
+          '#element_validate' => array('element_validate_number', 'element_validate_range'),
+          '#required' => TRUE,
+      );
+    $form['submit'] = array(
+        "#type" => 'submit',
+        '#value' => "Calculate Sum",
+    );
+    return $form;
+}
+
+function element_validate_range($element){
+    if($element['#value'] > 9999 || $element['#value'] < -9999){
+        form_error($element, t('Number must be less than 9,999 and greater than -9,999'));
+    }
+}
+
+function sum_form_submit($form, & $form_state){
+    $first_number = $form_state['values']['left_number'];
+    $second_number = $form_state['values']['right_number'];
+    $sum = $first_number + $second_number;
+    $_SESSION['sum_output'] = $sum;
+    $form_state['redirect']= 'sum_success';
+}
+
+function sum_success(){
+    $answer = $_SESSION['sum_output'];
+    return 'You calculated a sum! The answer is ' . $answer . '<div class="module-su-img"> <img src="/sites/all/modules/sum/pearl_approves.png" title= "Pearl approves of this page\'s addition skills" alt="pearl standing"></div>';;
+}

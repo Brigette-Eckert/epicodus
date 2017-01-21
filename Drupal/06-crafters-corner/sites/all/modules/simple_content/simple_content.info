@@ -1,0 +1,5 @@
+name = Simple Content
+description = A module that simplifies the add content pages for artisians. Hides settings that aren't releavant including revision information, url path settings, and menu settings.
+core = 7.x
+package = Epicodus Examples
+files[] = simple_content.module

@@ -1,0 +1,66 @@
+<?php
+$goodbye = "";
+
+function greetings_menu(){
+    $items['hello_user'] = array(
+    'title' => 'Hi!',
+    'page callback' => 'login_splash',
+    'access callback' => TRUE,
+    'type' => MENU_CALLBACK,
+    );
+
+    $items['goodbye_user'] = array(
+        'title' => 'Bye!',
+        'page callback' => 'logout_splash',
+        'access callback' => TRUE,
+        'type' => MENU_CALLBACK,
+    );
+    return $items;
+}
+
+
+function login_splash(){;
+    if (user_has_role(3)) {
+        return '<p> Welcome to the Admin View! </p>';
+    } elseif (user_has_role(5)) {
+        return '<p>Welcome, You Awesome Person!</p>';
+        //weirdo
+    } elseif (user_has_role(4)) {
+        return '<p>Keep your eyes open for Rock People.  Remember when it doubt, give them a spray.</p>';
+        //authenticated user
+    } elseif (user_has_role(2)) {
+        return '<p>Nice to see you!</p>';
+    }
+//
+}
+
+
+//use cookies to set logout message
+function logout_splash(){
+    $role =  $_COOKIE['Drupal_visitor_key'];
+return '<p> Bye Bye! </p>' . $role;
+//   //admin
+//   if($role == ){
+//       drupal_set_message("Bye Bye Bye");
+//       //VIP
+//   } elseif($role == ){
+//       drupal_set_message("Peace, Love, and Cookie Cat");
+//       //weirdo
+//   } elseif($role == ){
+//       drupal_set_message("Remember the Truth is Out There");
+//       ////authenticated user
+//   }elseif($role == ) {
+//       drupal_set_message("Come back soon!");
+//   }
+}
+
+
+function greetings_user_login($account, $user){
+    //set cookies for user role - hightest level role is last in array
+        user_cookie_save(array($user=> 'role'));
+        $_GET['destination'] = 'hello_user';
+}
+
+function greetings_user_logout($account){
+        $_GET['destination'] = 'goodbye_user';
+}
