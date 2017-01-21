@@ -1,2 +1,9 @@
 .idea
-*/node_modules
+node_modules
+npm-debug.log
+bower_components
+app/*.js.map
+.DS_Store
+build/
+typings/
+.sass-cache

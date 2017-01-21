@@ -1,0 +1,19 @@
+{ "name": "angular2-skeleton",
+  "description": "",
+  "main": "",
+  "authors": [
+    "Brigette Eckert <Brigette.Eckert@live.com>"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/Brigette-Eckert/epicodus",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.7"
+  }
+}
