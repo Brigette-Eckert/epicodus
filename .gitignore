@@ -1,48 +1,46 @@
 .idea
-node_modules
-npm-debug.log
-bower_components
-app/*.js.map
-.DS_Store
-build/
-typings/
-.sass-cache
+**node_modules
+**npm-debug.log
+**bower_components
+**app/*.js.map
+**.DS_Store
+**build/
+**typings/
+**.sass-cache
+
 
 
 # Angular Cli
 
 # compiled output
-/dist
-/tmp
+**/dist
+**/tmp
 
 # IDEs and editors
-/.idea
-.project
-.classpath
-.c9/
-*.launch
-.settings/
+**.project
+**.classpath
+**.c9/
+**.launch
+**.settings/
 
 # IDE - VSCode
-.vscode/*
-!.vscode/settings.json
-!.vscode/tasks.json
-!.vscode/launch.json
-!.vscode/extensions.json
+**.vscode/*
+**!.vscode/settings.json
+**!.vscode/tasks.json
+**!.vscode/launch.json
+**!.vscode/extensions.json
 
 # misc
-/.sass-cache
-/connect.lock
-/coverage/*
-/libpeerconnection.log
-npm-debug.log
-testem.log
-/typings
+**/.sass-cache
+**/connect.lock
+**/coverage/*
+**/libpeerconnection.log
+**testem.log
+**/typings
 
 # e2e
-/e2e/*.js
-/e2e/*.map
+**e2e/*.js
+**e2e/*.map
 
 #System Files
-.DS_Store
-Thumbs.db
+**Thumbs.db
