@@ -22,13 +22,10 @@ A repository for projects and exercises completed while self studying epicodus'c
 
 * Ear Candy (Drupal 8)
 
-*Election Site (Drupal 8)
+* Election Site (Drupal 8)
 
  
 #Javascript 
 
-*Taproom: (Angular 2)
-
-*Meal Tracker: (Angular 2) 
 
 
