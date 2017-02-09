@@ -1,0 +1,20 @@
+{
+  "name": "online-store",
+  "description": "",
+  "main": "",
+  "authors": [
+    "Brigette Eckert <Brigette.Eckert@live.com>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/Brigette-Eckert/epicodus",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.7"
+  }
+}
