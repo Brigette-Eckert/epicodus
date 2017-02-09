@@ -14,7 +14,9 @@ export class AppComponent {
   month: number = this.currentTime.getMonth() +1;
   day: number = this.currentTime.getDate();
   year: number = this.currentTime.getFullYear();
-  firstTask = {
-    description: 'Finish weekend homework for angular Epicodus Course'
-  }
+  tasks: Task[] = [
+    new Task('Finish weekend Angular homework for Epicodus Course', 'high'),
+    new Task('Brainstorm angular 2 project ideas', 'medium'),
+    new Task('Update Readme for Repos on github', 'low'),
+  ];
 }

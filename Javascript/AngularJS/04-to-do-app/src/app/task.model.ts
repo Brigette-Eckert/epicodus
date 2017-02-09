@@ -10,7 +10,7 @@ export class Task {
   }
 }
 
-
-var tasks: Task[] = [];
-tasks.push(new Task('Laundry', 'high'));
-console.log(tasks);
+//
+// var tasks: Task[] = [];
+// tasks.push(new Task('Finish weekend angular homework', 'high'));
+// console.log(tasks);
