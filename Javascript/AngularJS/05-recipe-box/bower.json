@@ -1,0 +1,13 @@
+{
+  "name": "recipe-box",
+  "description": "",
+  "main": "",
+  "authors": [
+    "Brigette Eckert <Brigette.Eckert@live.com>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/Brigette-Eckert/epicodus",
+  "dependencies": {
+    "bootstrap": "^3.3.7"
+  }
+}

@@ -1,0 +1,61 @@
+#book-heading {
+  color: #ffffff;
+  text-decoration: underline;
+  background: #8E0000;
+  text-align: center;
+  font-weight: bold;
+  max-width: 50%;
+  margin: 50px auto;
+  height: 100px;
+  transform: skewY(-4deg);
+  padding: 20px;
+}
+
+
+h3{
+  color: #8E0000;
+}
+
+#logo-image {
+  max-width: 100%;
+}
+
+#logo-image img {
+  height: 250px;
+  margin: auto;
+}
+
+.recipe-card {
+  background-color: #e1e4ea;
+  margin-top: 2%;
+  height: 750px;
+}
+
+.recipe-heading {
+  padding-top: 10px;
+}
+
+.sub-heading {
+  background-color: #8293af;
+  border: 5px groove white;
+  height: 50px;
+  padding: 2.5%;
+  margin: 25px;
+  border-radius: 40%;
+}
+
+.row {
+  width: 100%;
+}
+
+.ingredients, .results {
+  float: left;
+  width: 40%;
+  clear: left;
+}
+
+.origin, .skills {
+  float: right;
+  width: 40%;
+  clear: right;
+}

@@ -9,8 +9,3 @@ export class Task {
     this.priority = priorityParameter;
   }
 }
-
-//
-// var tasks: Task[] = [];
-// tasks.push(new Task('Finish weekend angular homework', 'high'));
-// console.log(tasks);

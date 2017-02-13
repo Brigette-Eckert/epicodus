@@ -1,0 +1,42 @@
+<div id="logo-image">
+  <img src="../assets/img/logo.png" class="img-responsive center-block" alt="legends of heroes: trials of cold steel logo" >
+</div>
+<h1 id="book-heading"> Recipe Book</h1>
+<div *ngFor="let recipe of recipes" class="container">
+  <div class="row">
+    <div class="recipe-card">
+      <div class="recipe-heading text-center">
+        <h3> [ {{recipe.name}} ] </h3>
+      </div> <div class="ingredients">
+      <div class="sub-heading">
+        <b> Ingredients: </b>
+      </div>
+      <ul>
+        <li *ngFor="let ingredient of recipe.ingredients">{{ingredient}}</li>
+      </ul>
+    </div>
+      <div class="origin">
+        <div class="sub-heading ">
+          <b> Where to Find the Recipe:</b>
+        </div>
+        {{recipe.origin}}
+      </div>
+      <div class="results">
+        <div class="sub-heading">
+          <b> Results: </b>
+        </div>
+        <ul>
+          <li *ngFor="let result of recipe.results">{{result}}</li>
+        </ul>
+      </div>
+      <div class="skills">
+        <div class="sub-heading">
+          <b> Party Member Skills: </b>
+        </div>
+        <ul>
+          <li *ngFor="let skill of recipe.skills">{{skill}}</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
