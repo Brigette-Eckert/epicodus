@@ -1,11 +1,6 @@
 export class Task {
-  done: boolean;
-  description: string;
-  priority: string;
+  public done: boolean = false;
 
-  constructor(descriptionParameter: string, priorityParameter: string) {
-    this.done = false;
-    this.description = descriptionParameter;
-    this.priority = priorityParameter;
-  }
+
+  constructor(public description: string, public priority: number) {}
 }
