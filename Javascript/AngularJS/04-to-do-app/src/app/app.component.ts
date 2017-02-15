@@ -20,10 +20,14 @@ export class AppComponent {
     new Task('Update Readme for Repos on github', 1),
   ];
 
-  selectedTask: Task = this.tasks[0];
+  selectedTask: Task = null;
 
   editTask(clickedTask){
     this.selectedTask = clickedTask;
+  }
+
+  finishedEditing(){
+    this.selectedTask = null;
   }
 
   isDone(clickedTask: Task){
