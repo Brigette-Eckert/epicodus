@@ -4,8 +4,8 @@
 </h1>
 <h3>{{ currentFocus}}</h3>
   <ul>
-    <li *ngFor="let currentTask of tasks">
-     {{currentTask.description}}, Priority: {{currentTask.priority}}, Done: {{currentTask.done}}
+    <li (click)="isDone(currentTask)" *ngFor="let currentTask of tasks">
+     {{currentTask.description}}, Priority: {{currentTask.priority}} <button (click)="editTask()"> Edit! </button>
     </li>
   </ul>
 </div>
