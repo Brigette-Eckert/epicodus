@@ -129,4 +129,30 @@ export class AppComponent {
       ['Rean: Average', 'Alisa: Excellent', 'Elliot: Good', 'Laura: Average', 'Machias: Poor', 'Emma: Great', 'Jusis: Average', 'Fie: Good', 'Gaius: Good', 'Crow: Average', 'Millium: Poor'],
       'Speak to Nicolas in the EC Room (Main Building 2F) on October 23rd (Evening).')
   ];
+
+  selectedRecipe: Recipe = this.recipes[0];
+
+  //clicked recipe is named recipe in html bc of for recipe in recipes
+  toggleDisplay(clickedRecipe){
+    this.selectedRecipe = clickedRecipe;
+    if(this.selectedRecipe.isActive == true){
+       this.selectedRecipe.isActive = false;
+    }else{
+       this.selectedRecipe.isActive = true;
+    }
+    console.log(this.selectedRecipe.isActive);
+    return this.selectedRecipe.isActive;
+  }
+
+  //need to get array from form for results, skill and ingredients
+  editRecipe(clickedRecipe){
+    this.selectedRecipe = clickedRecipe;
+    if(this.selectedRecipe.editMode == true){
+      this.selectedRecipe.editMode = false;
+    }else{
+      this.selectedRecipe.editMode = true;
+    }
+    console.log(this.selectedRecipe.editMode);
+    return this.selectedRecipe.editMode
+  }
 }
