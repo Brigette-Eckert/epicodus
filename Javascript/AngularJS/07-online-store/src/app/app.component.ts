@@ -7,5 +7,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Angular Cli is very good';
+  title = 'Epicodus Tunes';
 }
