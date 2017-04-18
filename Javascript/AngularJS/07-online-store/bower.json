@@ -6,7 +6,7 @@
     "Brigette Eckert <Brigette.Eckert@live.com>"
   ],
   "license": "MIT",
-  "homepage": "https://github.com/Brigette-Eckert/epicodus",
+  "homepage": "https://github.com/Brigette-Eckert/epicodus/tree/master/Javascript/AngularJS/07-online-store",
   "ignore": [
     "**/.*",
     "node_modules",

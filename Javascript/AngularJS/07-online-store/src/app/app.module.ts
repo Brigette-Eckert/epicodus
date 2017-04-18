@@ -9,6 +9,7 @@ import { WelcomeComponent } from './welcome/welcome.component';
 @NgModule({
   declarations: [
     AppComponent,
+    WelcomeComponent,
     WelcomeComponent
   ],
   imports: [
