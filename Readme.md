@@ -29,4 +29,10 @@ A repository for projects and exercises completed while self studying epicodus'c
 
 * Legend of Heroes: Recipe Box: https://github.com/Brigette-Eckert/legends-of-heroes-recipe-box (AngularJS 2)
 
-*Tap Room (AngularJS 2)
+* Tap Room (AngularJS 2)
+
+* Reddit Clone (AngularJS 2)
+
+#Ruby 
+
+#Rails
