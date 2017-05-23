@@ -33,6 +33,4 @@ A repository for projects and exercises completed while self studying epicodus'c
 
 * Reddit Clone (AngularJS 2)
 
-#Ruby 
 
-#Rails
