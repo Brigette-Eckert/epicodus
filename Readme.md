@@ -20,10 +20,6 @@ A repository for projects and exercises completed while self studying epicodus'c
 
 * Drupal LMS https://github.com/Brigette-Eckert/drupal-LMS (Drupal 7)
 
-* Ear Candy (Drupal 8)
-
-* Election Site (Drupal 8)
-
  
 #Javascript 
 
@@ -31,6 +27,5 @@ A repository for projects and exercises completed while self studying epicodus'c
 
 * Tap Room (AngularJS 2)
 
-* Reddit Clone (AngularJS 2)
-
+* Social Media Clone (React)
 
