@@ -21,11 +21,16 @@ A repository for projects and exercises completed while self studying epicodus'c
 * Drupal LMS https://github.com/Brigette-Eckert/drupal-LMS (Drupal 7)
 
  
-#Javascript 
+#Javascript
 
-* Legend of Heroes: Recipe Box: https://github.com/Brigette-Eckert/legends-of-heroes-recipe-box (AngularJS 2)
+## Angular
 
-* Tap Room (AngularJS 2)
+* Legend of Heroes: Recipe Box: https://github.com/Brigette-Eckert/legends-of-heroes-recipe-box (Angular 2)
+
+
+* Tap Room (Angular 2)
+
+## React
 
 * Social Media Clone (React)
 
