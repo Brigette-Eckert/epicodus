@@ -7,7 +7,13 @@ class ProfileCard extends React.Component {
     return(
       <div id="profile-card">
         <div className="profile-card__header"></div>
-        <div className="profile-card__image">Pic</div>
+        <div className="profile-card__image">
+           O
+          <br/>
+          /|\
+          <br/>
+          /\
+        </div>
         <div className="profile-card__name">Kellie A. Corrigan</div>
         <div className="profile-card__stats">
           <div className="profile-card__tweets"> Tweets </div>

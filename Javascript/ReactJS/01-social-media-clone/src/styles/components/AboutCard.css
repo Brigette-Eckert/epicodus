@@ -1,0 +1,8 @@
+#about-card {
+    height: 300px;
+    width: 200px;
+    border: solid grey 2px;
+    margin-left: 20px;
+    margin-top: 25px;
+    font-size: 70%;
+}

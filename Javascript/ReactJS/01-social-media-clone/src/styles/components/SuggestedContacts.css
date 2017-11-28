@@ -1,0 +1,44 @@
+#contacts {
+    height: 270px;
+    width: 175px;
+    border: solid grey 2px;
+    margin-top: -500px;
+    margin-left: 510px;
+}
+
+#title {
+    font-weight: bold;
+}
+.contacts__people {
+    margin-bottom: -20px;
+}
+.contacts__people h5 {
+    font-weight: bold;
+    margin-left: 50px;
+}
+.contacts__face {
+    height: 45px;
+    width: 45px;
+    margin-top: -25px;
+    margin-left: 15px;
+    margin-bottom: -22px;
+}
+
+#contacts__person1 .contacts__face{
+    background-color: yellow;
+}
+
+#contacts__person2 .contacts__face{
+    background-color: darkcyan;
+}
+
+#contacts__person3 .contacts__face{
+    background-color: darkorange;
+}
+
+.contacts__button {
+    background-color: darkblue;
+    color: white;
+    border: none;
+    margin-left: 50px;
+}

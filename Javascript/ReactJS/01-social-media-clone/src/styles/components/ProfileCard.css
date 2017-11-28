@@ -1,7 +1,7 @@
 #profile-card {
     height: 150px;
-    width: 220px;
-    border: solid grey 5px;
+    width: 200px;
+    border: solid grey 2px;
     margin-left: 20px;
 }
 
@@ -13,7 +13,7 @@
 
 .profile-card__image {
     height: 40%;
-    width: 40%;
+    width: 30%;
     border-radius: 20%;
     margin-top: -20px;
     background-color: blue;
@@ -23,12 +23,16 @@
 }
 
 .profile-card__stats {
+    margin-top: 20px;
+}
+
+.profile-card__stats div {
     display: inline;
-    font-size: 75%;
+    font-size: 80%;
 }
 
 .profile-card__name {
     font-weight: bold;
-    margin-left: 85px;
+    margin-left: 50px;
     margin-top: -40px;
 }

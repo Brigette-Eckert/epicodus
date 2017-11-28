@@ -1,0 +1,27 @@
+.Navbar__home_btn {
+    background-color: white;
+    border: solid gray 1px;
+}
+
+.Navbar__notifications_btn {
+    background-color: white;
+    border: solid gray 1px;
+}
+
+.Navbar__messages_btn {
+    background-color: white;
+    border: solid gray 1px;
+}
+
+.Navbar__tweet_btn {
+    background-color: white;
+    border: solid blue 1px;
+    border-radius: 15px;
+}
+
+.Navbar__search {
+    border-radius: 15px;
+    border: solid blue 1px;
+    margin-left: 110px;
+    margin-right: 10px;
+}
