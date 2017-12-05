@@ -38,3 +38,9 @@
     border: solid grey 1px;
 }
 
+
+hr {
+    border-top-width: 1px;
+    height: 1px;
+    border-color: grey;
+}

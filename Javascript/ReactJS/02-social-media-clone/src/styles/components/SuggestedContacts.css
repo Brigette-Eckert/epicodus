@@ -1,4 +1,4 @@
-#contacts {
+#contacts__suggested_contacts_list {
     height: 270px;
     width: 175px;
     border: solid grey 2px;
@@ -16,29 +16,17 @@
     font-weight: bold;
     margin-left: 50px;
 }
-.contacts__face {
-    height: 45px;
-    width: 45px;
-    margin-top: -25px;
-    margin-left: 15px;
-    margin-bottom: -22px;
-}
 
-#contacts__person1 .contacts__face{
-    background-color: yellow;
-}
+/*.contacts__button {*/
+    /*background-color: darkblue;*/
+    /*color: white;*/
+    /*border: none;*/
+    /*margin-left: 50px;*/
+/*}*/
 
-#contacts__person2 .contacts__face{
-    background-color: darkcyan;
-}
-
-#contacts__person3 .contacts__face{
-    background-color: darkorange;
-}
-
-.contacts__button {
-    background-color: darkblue;
-    color: white;
-    border: none;
-    margin-left: 50px;
+/*for working on wide screen */
+@media screen and (min-width: 850px) {
+    #contacts__suggested_contacts_list{
+        margin-left: 710px;
+    }
 }

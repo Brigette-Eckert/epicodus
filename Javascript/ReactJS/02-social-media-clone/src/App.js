@@ -8,6 +8,13 @@ import SuggestedContacts from './components/SuggestedContacts';
 
 import './styles/App.css';
 
+let profile = {
+  name: "Kellie A. Corrigan",
+  tweets: 101,
+  following: 102,
+  followers: 103
+};
+
 class App extends Component {
   render() {
     return (
@@ -15,7 +22,7 @@ class App extends Component {
         <Navbar/>
           <div className="row">
             <div className="col-md-4">
-              <ProfileCard/>
+              <ProfileCard profile={profile}/>
               <AboutCard/>
             </div>
             <Feed/>

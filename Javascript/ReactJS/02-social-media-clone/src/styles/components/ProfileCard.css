@@ -3,6 +3,7 @@
     width: 200px;
     border: solid grey 2px;
     margin-left: 20px;
+    padding-bottom: 5px;
 }
 
 .profile-card__header {
@@ -31,6 +32,9 @@
     font-size: 80%;
 }
 
+.profile-card__num {
+    padding-right: 15px;
+}
 .profile-card__name {
     font-weight: bold;
     margin-left: 50px;

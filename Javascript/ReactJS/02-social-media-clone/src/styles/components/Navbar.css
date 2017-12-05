@@ -25,3 +25,9 @@
     margin-left: 110px;
     margin-right: 10px;
 }
+
+hr {
+    border-top-width: 1px;
+    height: 1px;
+    border-color: grey;
+}

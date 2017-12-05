@@ -1,0 +1,40 @@
+.contact__update_text {
+    margin-top: -50px;
+    margin-left: 50px;
+    padding-left: 10px;
+}
+
+.contact__update_text h5 {
+    font-weight: bold;
+    margin-bottom: -3px;
+}
+
+.contact__face {
+    margin-top: 20px;
+    margin-left: 10px;
+    font-weight: bold;
+    padding: 5px;
+    width: 48px;
+    height: 48px;
+}
+
+.contact__info {
+    min-height: 50px;
+}
+
+.likesArea {
+    color: blue;
+    margin-top: 10px;
+}
+.addBtn, .likeBtn {
+    background-color: blue;
+    color: white;
+    border: none;
+    margin-left: 50px;
+}
+
+.addBtn {
+    margin-top: 10px;
+
+}
+
