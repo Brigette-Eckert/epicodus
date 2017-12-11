@@ -22,18 +22,12 @@
     min-height: 50px;
 }
 
-.likesArea {
-    color: blue;
-    margin-top: 10px;
-}
-.addBtn, .likeBtn {
+
+.addBtn {
     background-color: blue;
     color: white;
     border: none;
     margin-left: 50px;
-}
-
-.addBtn {
     margin-top: 10px;
 
 }

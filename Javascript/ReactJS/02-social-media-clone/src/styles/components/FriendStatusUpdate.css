@@ -1,0 +1,56 @@
+
+.likesArea {
+    color: blue;
+    margin-top: 10px;
+}
+.likeBtn {
+    background-color: blue;
+    color: white;
+    border: none;
+    margin-left: 50px;
+}
+
+.friend-status-update__face {
+    margin-top: 20px;
+    margin-left: 10px;
+    font-weight: bold;
+    padding: 5px;
+    width: 48px;
+    height: 48px;
+}
+
+.friend-status-update_text {
+    margin-top: -20px;
+    margin-left: 50px;
+    padding-left: 10px;
+}
+
+.friend-status-update__update_text h5 {
+    font-weight: bold;
+    margin-top: -30px;
+    margin-bottom: 15px;
+}
+
+.friend-status-update__face {
+    margin-top: 20px;
+    margin-left: 10px;
+    font-weight: bold;
+    padding: 5px;
+    width: 48px;
+    height: 48px;
+}
+
+.friend-status-update__info {
+    min-height: 50px;
+}
+
+
+.addBtn {
+    background-color: blue;
+    color: white;
+    border: none;
+    margin-left: 50px;
+    margin-top: 10px;
+
+}
+

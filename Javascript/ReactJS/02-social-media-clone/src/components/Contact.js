@@ -2,14 +2,17 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import '../styles/components/Contact.css';
 
+// onClick={this.}
+
 class Contact extends React.Component {
+  constructor(props){
+    super(props);
+
+  }
+
   render(){
-    let specialAreaContent = null;
-    if(this.props.likesVisible){
-      specialAreaContent = <div className="likesArea"> Likes: {this.props.likes} <button className="likeBtn"> Like </button></div>
-    } if(this.props.addVisible){
-      specialAreaContent = <button className="addBtn"> Add </button>
-    }
+    //<div className="likesArea"> Likes: {this.props.likes} <button className="likeBtn"> Like </button></div>
+
     return (
       <div className="contact__info">
         <div id="contact__update">
@@ -19,7 +22,7 @@ class Contact extends React.Component {
             {this.props.status}
           </div>
           <div>
-            {specialAreaContent}
+            <button className="addBtn"> Add </button>
           </div>
         </div>
       </div>
@@ -30,11 +33,7 @@ class Contact extends React.Component {
 Contact.propTypes = {
   name: PropTypes.string.isRequired,
   face: PropTypes.string.isRequired,
-  status: PropTypes.string,
   color: PropTypes.string.isRequired,
-  likes: PropTypes.number,
-  likesVisible: PropTypes.bool,
-  addVisible: PropTypes.bool,
 };
 
 export default Contact;

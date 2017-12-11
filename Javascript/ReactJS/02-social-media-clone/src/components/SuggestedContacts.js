@@ -13,26 +13,17 @@ class SuggestedContacts extends React.Component {
             name="Jake"
             face="❍ᴥ❍ʋ"
             color="yellow"
-            status=""
-            likesVisible={false}
-            addVisible={true}
 
           />
           <Contact
             name="Shades"
             face="⌐■_■"
             color="Orange"
-            status=""
-            likesVisible={false}
-            addVisible={true}
           />
           <Contact
             name="Dr. Monocle"
             face="ಠ_ರೃ"
             color="Red"
-            status=""
-            likesVisible={false}
-            addVisible={true}
           />
         </div>
       </div>
