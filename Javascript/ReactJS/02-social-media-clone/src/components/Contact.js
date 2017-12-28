@@ -2,17 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import '../styles/components/Contact.css';
 
-// onClick={this.}
 
 class Contact extends React.Component {
-  constructor(props){
-    super(props);
-
-  }
-
+// set state to change to request sent when add clicked?
   render(){
-    //<div className="likesArea"> Likes: {this.props.likes} <button className="likeBtn"> Like </button></div>
-
     return (
       <div className="contact__info">
         <div id="contact__update">

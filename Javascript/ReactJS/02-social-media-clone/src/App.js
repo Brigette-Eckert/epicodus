@@ -20,14 +20,10 @@ class App extends Component {
     return (
       <div className="App">
         <Navbar/>
-          <div className="row">
-            <div className="col-md-4">
-              <ProfileCard profile={profile}/>
-              <AboutCard/>
-            </div>
-            <Feed/>
-            <SuggestedContacts/>
-          </div>
+        <ProfileCard profile={profile}/>
+        <AboutCard/>
+        <Feed/>
+        <SuggestedContacts/>
       </div>
     );
   }
