@@ -32,5 +32,5 @@ A repository for projects and exercises completed while self studying epicodus'c
 
 ## React
 
-* Social Media Clone
+* Social Media Clone https://github.com/Brigette-Eckert/epicodus/tree/master/Javascript/ReactJS/02-social-media-clone
 
