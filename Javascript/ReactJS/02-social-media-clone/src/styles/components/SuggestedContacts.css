@@ -27,6 +27,6 @@
 /*for working on wide screen */
 @media screen and (min-width: 850px) {
     #contacts__suggested_contacts_list{
-        margin-left: 710px;
+        margin-left: 1000px;
     }
 }

@@ -30,6 +30,7 @@ class FriendStatusUpdate extends React.Component {
               <div className="likesArea"> Likes: {this.state.likes} <button onClick={this.likeStatus} className="likeBtn"> Like </button></div>
             </div>
         </div>
+        <hr/>
       </div>
     );
   }

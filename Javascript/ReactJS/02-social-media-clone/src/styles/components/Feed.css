@@ -17,7 +17,9 @@
 
 #feed__input input{
     border: solid blue .5px;
-    margin-left: 45px;
+    width: 130px;
+    margin-left: 46px;
+    margin-right: 10px;
 }
 
 #feed__input input::placeholder {
@@ -44,3 +46,11 @@ hr {
     height: 1px;
     border-color: grey;
 }
+
+#feed_update_btn {
+    background-color: blue;
+    color: white;
+    border: none;
+    margin-top: 10px;
+}
+
