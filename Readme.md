@@ -16,9 +16,9 @@ A repository for projects and exercises completed while self studying epicodus'c
 
 * Flourish and Blotts Bookstore: https://github.com/Brigette-Eckert/Flourish---Blotts-Bookstore
 
-* Crafter's Corner https://github.com/Brigette-Eckert/Crafters-Corner
+* Crafter's Corner: https://github.com/Brigette-Eckert/Crafters-Corner
 
-* Drupal LMS https://github.com/Brigette-Eckert/drupal-LMS
+* Drupal LMS: https://github.com/Brigette-Eckert/drupal-LMS
 
  
 #Javascript
@@ -28,9 +28,8 @@ A repository for projects and exercises completed while self studying epicodus'c
 * Legend of Heroes: Recipe Box: https://github.com/Brigette-Eckert/legends-of-heroes-recipe-box
 
 
-* Tap Room
-
 ## React
 
-* Social Media Clone https://github.com/Brigette-Eckert/epicodus/tree/master/Javascript/ReactJS/02-social-media-clone
+* Social Media Clone: https://github.com/Brigette-Eckert/epicodus/tree/master/Javascript/ReactJS/02-social-media-clone
 
+* Tamagotchi:

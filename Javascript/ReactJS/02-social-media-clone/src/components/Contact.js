@@ -4,7 +4,7 @@ import '../styles/components/Contact.css';
 
 
 class Contact extends React.Component {
-// set state to change to request sent when add clicked?
+
   render(){
     return (
       <div className="contact__info">

@@ -3,9 +3,6 @@ import PropTypes from 'prop-types';
 import '../styles/components/FriendStatusUpdate.css';
 
 class FriendStatusUpdate extends React.Component {
-
-  constructor(props) {
-    super(props);
     this.state = {
       likes: this.props.initialLikes
     };
